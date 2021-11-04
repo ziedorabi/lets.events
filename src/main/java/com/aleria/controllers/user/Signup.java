@@ -76,10 +76,11 @@ public class Signup extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("idUser", user.getIdUser());
 				session.setAttribute("username", user.getUserName());
-				session.setAttribute("firstName", user.getFirstName());
-				session.setAttribute("lastName", user.getLastName());
-				session.setAttribute("userMail", user.getUserMail());
-				session.setAttribute("userPhone", user.getUserPhone());
+				session.setAttribute("firstname", user.getFirstName());
+				session.setAttribute("lastname", user.getLastName());
+				session.setAttribute("email", user.getUserMail());
+				session.setAttribute("phone", user.getUserPhone());
+				session.setAttribute("address", user.getUserAddress());
 				session.setAttribute("avatar", user.getAvatar());
 				response.sendRedirect("home");
 			}

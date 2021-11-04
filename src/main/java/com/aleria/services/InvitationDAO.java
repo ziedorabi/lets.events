@@ -554,5 +554,36 @@ public class InvitationDAO {
 		}
 		return listInvite;
 	}
+	public static int getUnseenInviteCount(int i) {
+		int status = 0;
+		PreparedStatement ps = null;
+		Connection con = null;
+		ResultSet rs = null;
+
+		try {
+			con = DB.getCon();
+			ps = con.prepareStatement("SELECT COUNT(*) FROM invitation WHERE seen = ? AND idAttendee=?");
+			ps.setInt(1, 0);
+			ps.setInt(2, i);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				status = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				ps.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			try {
+				con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return status;
+	}
 
 }

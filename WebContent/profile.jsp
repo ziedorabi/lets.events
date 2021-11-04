@@ -30,7 +30,7 @@
     	  action = "<a href='deleteFriend?idUser="+user.getIdUser()+"'>Suppriner</a>";
       } else {
     	  gender = (String) request.getAttribute("avatar");
-    	  action = "<a href='sentRequest?idUser="+idUser+">Ajouter</a>" ;} System.out.println(check);
+    	  action = "<a href='sentRequest?idUser="+idUser+">Ajouter</a>" ;} 
     %>
 <!DOCTYPE html>
 <html>

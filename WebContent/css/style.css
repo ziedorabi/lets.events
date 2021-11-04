@@ -15,10 +15,9 @@
 }
 
 .footer {
-  position: fixed ;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  position:absolute;
+   bottom:0;
+   width:100%;
   padding: 3rem;
   background-color: #0e1e31;
   color: white ;

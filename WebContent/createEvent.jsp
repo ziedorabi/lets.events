@@ -44,7 +44,7 @@
         	            <label id="address">Liste des invités</label>
                                <div class="form input-group"> 
                                       <div id="dynamic_field">
-                                         <input id="eventTitle"  type="text" name="guest[]" placeholder="Choisisser un invité" class="name_list" />
+                                         <input id="search" class="eventTitle" type="text" name="guest[]" placeholder="Choisisser un invité" class="name_list" />
                                       </div>
                                          <button type="button" name="add" id="add" class="btn btn-info ">Ajouter</button>
                                </div>  

@@ -77,6 +77,13 @@ button {
     border-radius: 5px;
 
 }
+.eventTitle { 
+	display: block;
+    width: 90%;
+    margin: auto;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
 #guests {
     display: block;
     width: 90%;
@@ -85,7 +92,7 @@ button {
     border-radius: 5px;
 
 }
-#new-guest {
+.new-guest {
     display: inline-block;
     width: 50%;
     margin: 0 5%;

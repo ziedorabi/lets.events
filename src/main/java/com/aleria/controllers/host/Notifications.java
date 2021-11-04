@@ -47,14 +47,15 @@ public class Notifications extends HttpServlet {
 		if (!loggedIn) {
 			response.sendRedirect("login");
 		} else {
+			int idUser = (int) session.getAttribute("idUser");
 			if (!request.getParameter("view").isEmpty()) {
-				FriendRequestDAO.getNotif();
+				FriendRequestDAO.getNotif(idUser);
 			}
 			String output = new String();
 			List<FriendRequest> listReq = new ArrayList<FriendRequest>();
 			List<Invitation> listInvit = new ArrayList<Invitation>();
-			listInvit = InvitationDAO.getMyUnseenInvite(2);
-			listReq = FriendRequestDAO.getMyUnseenRequest(2);
+			listInvit = InvitationDAO.getMyUnseenInvite(idUser);
+			listReq = FriendRequestDAO.getMyUnseenRequest(idUser);
 			if (listReq.size() > 0 || listInvit.size() > 0) {
 				int count = listReq.size() + listInvit.size();
 				output = "<h2>Notifications - <span>" + count + "</span></h2>\r\n";
@@ -96,7 +97,8 @@ public class Notifications extends HttpServlet {
 						+ "                <h4>Pas de notifications.</h4>\r\n" + "            </div>\r\n"
 						+ "        </div>\r\n";
 			}
-			int count = FriendRequestDAO.getUnreadNotif(2);
+			int count = FriendRequestDAO.getUnreadNotif(idUser);
+			count += InvitationDAO.getUnseenInviteCount(idUser);
 			JSONObject json = new JSONObject();
 			json.put("notification", output);
 			json.put("unseen_notification", count);

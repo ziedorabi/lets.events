@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.aleria.entities.Event;
-import com.aleria.services.AttendeeDAO;
 import com.aleria.services.EventDAO;
 import com.aleria.services.InvitationDAO;
+import com.aleria.services.UserDAO;
 
 /**
  * Servlet implementation class AddEvent
@@ -81,8 +81,8 @@ public class AddEvent extends HttpServlet {
 			int idEvent = 0;
 			idEvent = EventDAO.createEvent(event);
 			for (int i = 0; i < guests.length; i++) {
-				if (guests[i] != null || guests[i].isEmpty())
-					status = InvitationDAO.createInvitation(AttendeeDAO.getIdAttendees(guests[i]), idHost, idEvent);
+				if (guests[i] != null || !guests[i].isEmpty()) {
+					status = InvitationDAO.createInvitation(UserDAO.getIdUser(guests[i]), idHost, idEvent);}
 			}
 			if (status > 0) {
 				request.setAttribute("message", "success");

@@ -28,7 +28,7 @@ $(document).ready(function(){
       var i=1;  
       $('#add').click(function(){  
            i++;  
-           $('#dynamic_field').append('<div id="row'+i+'"><td><input style="margin-top: 0.75rem ;" type="text" id="new-guest" name="guest[]" placeholder="Choisissez un invité" class="name_list"/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></div>');  
+           $('#dynamic_field').append('<div id="row'+i+'"><td><input style="margin-top: 0.75rem ;" type="text" id="search" class="new-guest" name="guest[]" placeholder="Choisissez un invité" class="name_list"/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></div>');  
       });  
       $(document).on('click', '.btn_remove', function(){  
            var button_id = $(this).attr("id");   

@@ -22,7 +22,7 @@ public class FriendRequestDAO {
 			ps = con.prepareStatement("INSERT INTO friendrequest (idUserOne, idUserTwo, status) VALUES (?, ?, ? )");
 			ps.setInt(1, idUserOne);
 			ps.setInt(2, idUserTwo);
-			ps.setObject(3, 3);
+			ps.setInt(3, 3);
 			status = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -319,16 +319,17 @@ public class FriendRequestDAO {
 		return status;
 	}
 
-	public static int getNotif() {
+	public static int getNotif(int idUser) {
 		int status = 0;
 		PreparedStatement ps = null;
 		Connection con = null;
 
 		try {
 			con = DB.getCon();
-			ps = con.prepareStatement("UPDATE friendrequest SET seen = ? WHERE seen = ?");
+			ps = con.prepareStatement("UPDATE friendrequest SET seen = ? WHERE idUserTwo = ? AND seen = ?");
 			ps.setInt(1, 1);
-			ps.setInt(2, 0);
+			ps.setInt(2, idUser);
+			ps.setInt(3, 0);
 			status = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -355,8 +356,9 @@ public class FriendRequestDAO {
 
 		try {
 			con = DB.getCon();
-			ps = con.prepareStatement("SELECT COUNT(*) FROM friendrequest WHERE seen = ?");
+			ps = con.prepareStatement("SELECT COUNT(*) FROM friendrequest WHERE seen = ? AND idUserTwo=?");
 			ps.setInt(1, 0);
+			ps.setInt(2, i);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				status = rs.getInt(1);
