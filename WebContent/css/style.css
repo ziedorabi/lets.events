@@ -1,0 +1,131 @@
+@font-face { 
+	font-family: 'logo font' ; 
+	font-style: normal ; 
+	src: url(../font/PartyConfetti.ttf) format('truetype') ;
+	}
+ body {
+   margin: 0;
+   height: 100%;
+    		background: #3c373e; 
+   
+}#disconnect {
+	font-size: 2 rem ; 
+	font-color: red ; 
+	
+}
+
+.footer {
+  position: fixed ;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3rem;
+  background-color: #0e1e31;
+  color: white ;
+  text-align: center;
+}
+	#logo { 
+ 	 font-family: 'logo font' ; 
+ 	 font-size: 3rem ; 
+ 	 color: #FFD700 !important ;
+ 	}
+	#nav { 
+	background-color: #0e1e31	;
+	}
+	#list  { color: white ;
+			 font-weight: 600 ; 
+			 font-size: 2vh ;
+			 padding-right: 1rem; 
+			 padding-left: 1rem ;}
+   .notifications {
+    width: 300px;
+    height: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 63px;
+    right: 62px;
+    border-radius: 5px 0px 5px 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.notifications h2 {
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #999
+}
+
+.notifications h2 span {
+    color: #f00
+}
+.label-pill {
+	
+    border-radius: 10px !important
+;
+    margin-left: 0px !important
+;
+    font-size: 13px;
+
+}
+.notifications-item {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 6px 9px;
+    margin-bottom: 0px;
+    cursor: pointer
+}
+
+.notifications-item:hover {
+    background-color: #eee
+}
+
+.notifications-item img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 9px;
+    border-radius: 50%;
+    margin-top: 2px
+}
+
+.notifications-item .text h4 {
+    color: #777;
+    font-size: 16px;
+    margin-top: 3px
+}
+
+.notifications-item .text p {
+    color: #aaa;
+    font-size: 12px
+}
+.icon {
+    cursor: pointer;
+    margin-right: 50px;
+    line-height: 60px
+}
+
+.icon span {
+    padding: 7px;
+    border-radius: 50%;
+    color: #fff;
+    vertical-align: top;
+    margin-left: -25px
+}
+
+.icon img {
+    display: inline-block;
+    width: 2rem;
+}
+
+.icon:hover {
+    opacity: .7
+}
+.custom-toggler.navbar-toggler {
+    border-color: white;
+}
+
+.custom-toggler .navbar-toggler-icon {
+            background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 251, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
